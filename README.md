@@ -153,7 +153,7 @@ The tool provides the following information:
 - **Coordinates** - Latitude and longitude (if available)
 - **Timestamp** - Date and time of lookup
 
-## 🗺️ Map Files
+## Map Files
 
 Generated maps are saved as HTML files with the naming convention:
 ```
@@ -166,7 +166,7 @@ Maps include:
 - Highlighted circle showing approximate area
 - Zoom and pan capabilities
 
-## 🔧 Troubleshooting
+## Troubleshooting
 
 ### "No module named 'phonenumbers'"
 ```bash
