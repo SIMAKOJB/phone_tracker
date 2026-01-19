@@ -23,10 +23,13 @@ class Colors:
     BOLD = '\033[1m'
 
 
-def get_colored(text, color, bold=False):
+def colored(text, color, bold=False, no_color=False):
+    if no_color:
+        return text
+    prefix = color
     if bold:
-        return f"{color}{Colors.BOLD}{text}{Colors.END}"
-    return f"{color}{text}{Colors.END}"
+        prefix += Colors.BOLD
+    return f"{prefix}{text}{Colors.END}"
 
 
 def get_phone_info(phone_str, api_key, no_color=False):
