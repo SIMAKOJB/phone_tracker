@@ -1,9 +1,8 @@
-# phone-tracker
-# 📱 Phone Number Tracker
+# Phone Number Tracker
 
 A powerful command-line tool for gathering intelligence on phone numbers including geolocation, carrier information, and interactive map visualization.
 
-## 🎯 Features
+## Features
 
 - **Phone Number Validation** - Verify if numbers are valid and properly formatted
 - **Carrier Detection** - Identify the mobile/telecom carrier
@@ -13,11 +12,11 @@ A powerful command-line tool for gathering intelligence on phone numbers includi
 - **Color-Coded Terminal Output** - Beautiful, easy-to-read information display
 - **Export Capabilities** - Save maps for later reference
 
-## ⚠️ Important Notice
+## Important Notice
 
 This tool provides **approximate location based on carrier registration area**, not real-time GPS tracking. The location represents where the phone number is registered, not the current position of the device.
 
-## 🛠️ Installation
+## Installation
 
 ### Prerequisites
 
@@ -34,14 +33,24 @@ cd phone-tracker
 
 ### Step 2: Install Dependencies
 
+**For Parrot OS / Kali Linux / Debian-based systems:**
+
 ```bash
-pip3 install phonenumbers folium opencage
+python3 -m venv venv
+source venv/bin/activate
+pip3 install -r requirements.txt
 ```
 
-Or install from requirements file:
+**Alternative (system-wide with override):**
 
 ```bash
-pip3 install -r requirements.txt
+pip3 install -r requirements.txt --break-system-packages
+```
+
+**Or install individually:**
+
+```bash
+pip3 install phonenumbers folium opencage --break-system-packages
 ```
 
 ### Step 3: Get OpenCage API Key
@@ -54,21 +63,29 @@ pip3 install -r requirements.txt
 ### Step 4: Make Script Executable
 
 ```bash
-chmod +x phonetrack.py
+chmod +x phoneinfo.py
 ```
 
 ### Step 5: (Optional) Add to PATH
 
 ```bash
-sudo cp phonetrack.py /usr/local/bin/phonetrack
+sudo cp phoneinfo.py /usr/local/bin/phoneinfo
 ```
 
-## 🚀 Usage
+##  Usage
+
+### Important: Activate Virtual Environment
+
+If you installed using venv, activate it first:
+
+```bash
+source venv/bin/activate
+```
 
 ### Basic Usage
 
 ```bash
-python3 phonetrack.py +254712345678 -k YOUR_API_KEY
+python3 phoneinfo.py +254712345678 -k YOUR_API_KEY
 ```
 
 ### Using Environment Variable
@@ -100,7 +117,7 @@ optional arguments:
   -q, --quiet           Suppress banner display
 ```
 
-## 📋 Examples
+## Examples
 
 ### Example 1: Basic lookup
 ```bash
@@ -123,7 +140,7 @@ python3 phonetrack.py +254701234567
 python3 phonetrack.py +33612345678 -k YOUR_API_KEY -q
 ```
 
-## 📊 Output Information
+## Output Information
 
 The tool provides the following information:
 
@@ -180,7 +197,7 @@ Ensure the number:
 ### Map doesn't open automatically
 Use the `--open` or `-o` flag, and ensure you have a default web browser configured.
 
-## 📦 Dependencies
+## Dependencies
 
 ```
 phonenumbers>=8.13.0
@@ -188,7 +205,7 @@ folium>=0.14.0
 opencage>=2.2.0
 ```
 
-## 🌍 Supported Countries
+## Supported Countries
 
 The tool supports phone numbers from all countries that have assigned international dialing codes. Some examples:
 
@@ -201,17 +218,17 @@ The tool supports phone numbers from all countries that have assigned internatio
 - **France**: +33
 - **China**: +86
 
-## ⚖️ Legal & Ethical Use
+## Legal & Ethical Use
 
 This tool is for **educational and legitimate purposes only**:
 
-✅ **Acceptable uses:**
+**Acceptable uses:**
 - Verifying your own phone numbers
 - Testing phone number validation systems
 - Educational research on telecommunications
 - Legitimate investigative purposes with proper authorization
 
-❌ **Unacceptable uses:**
+**Unacceptable uses:**
 - Stalking or harassment
 - Unauthorized surveillance
 - Privacy violations
@@ -219,14 +236,14 @@ This tool is for **educational and legitimate purposes only**:
 
 **Always respect privacy laws and regulations in your jurisdiction.**
 
-## 🔒 Privacy & Security
+## Privacy & Security
 
 - No data is stored or logged by this tool
 - All lookups are performed in real-time
 - API keys should be kept confidential
 - Generated maps are stored locally only
 
-## 🤝 Contributing
+## Contributing
 
 Contributions are welcome! Areas for improvement:
 - Additional data sources
@@ -234,11 +251,11 @@ Contributions are welcome! Areas for improvement:
 - Batch processing capabilities
 - Export to JSON/CSV formats
 
-## 📜 License
+## License
 
 This tool is provided as-is for educational purposes. Use responsibly and in accordance with local laws and regulations.
 
-## 🆘 Support
+## Support
 
 For issues or questions:
 1. Check the troubleshooting section above
@@ -246,7 +263,7 @@ For issues or questions:
 3. Ensure your API key is valid and has remaining quota
 4. Check your internet connection
 
-## 🔄 Updates
+## Updates
 
 To update dependencies:
 ```bash
